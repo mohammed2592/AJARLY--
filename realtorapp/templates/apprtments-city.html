@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  
+  <head>
+    <title>apprtments-city</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="login/css/styles.css" /> 
+    <link
+      rel="stylesheet"
+      href="{%static 'login/css/appartments-city.css' %}"
+    />
+    {% comment %} <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    /> {% endcomment %}
+    <link rel="stylesheet" href="{%static 'login/css/home.css' %}" />
+    <title>Realtor</title>
+    <!-- Start Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;900&family=Josefin+Sans:wght@300&family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,400;0,600;0,800;1,200;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <!--Ends Google Fonts -->
+    <!-- Start icon aosem -->
+    <link rel="icon" href="{%static 'login/images/icon.png' %}" />
+    {% comment %} <link
+      rel="stylesheet"
+      href="{%static 'login/fontawesome-free-6.2.0-web/css/all.css' %}"
+    /> {% endcomment %}
+    <!-- End icon aosem -->
+    <style>
+      
+    
+/*-------------------------------------------------------------------------------------------*/
+      body {
+        font-family: sans-serif;
+        font-style: normal;
+        Font-family: 'Poppins';
+        background-color: #c0cdc754;
+         filter: invert(0); 
+  }
+  .logo{
+    
+  }
+      
+    
+    .card {
+      display: flex;
+      flex-direction: column;
+      /* border: #0D4C76; */
+      align-items: center;
+      border-radius: 11px;
+      margin: 5px 5px;
+      height: 380px;
+      background-color: #91afa745;
+    }  
+    .btn {
+      background: #072a14b0;
+      border-radius: 5px;
+      text-align: center;
+      display: inline-block;
+      margin-left: 5px;
+      transition: transform .3s;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 30px;
+      width: 100px;
+      height: 25px;
+      text-align: left;
+      padding: 15px;
+      position: static;
+  }
+      .part1{
+        margin-top: -1px;
+        margin-left: -1px;
+        display: inline-flex;
+        width: 100%;
+        min-height: 100%;
+        /* background-color: #4fa584; */
+        border-radius: 0px;
+      
+      }
+      .part2 {
+        margin-left: 40px;
+        width: 100%;
+        margin-top: 40px;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      /* border: #0D4C76; */
+      align-items: center;
+      border-radius: 11px;
+      margin: 5px 5px;
+      height: 380px;
+      width: 450px;
+      background-color: #91afa745;
+      border:none;
+  }
+.card-text{
+  font-size: 14px;
+  color: #000000;
+  font-weight: 600;
+  opacity: .8;
+  text-align: justify;
+  margin: 10px;
+}
+      .filters{
+        padding-left:15px;
+        display:flex;
+        border-radius: 0px; 
+        background-color: #828f8d;
+        padding-top: 15px;
+      }
+      .page-content{
+        margin-top: -130px;
+      }
+      input[type='number']{
+        background-color: #eaeeecc9;
+        margin: 10px;
+        height: 30px;
+        width: 50%;
+        border-radius: 15px;
+        font-size: 20px;
+        padding: 0 10px;
+        color: #000000;
+        border: none;
+    }
+    select {
+      background-color: #eaeeecc9;
+      margin: 10px;
+      height: 30px;
+      width: 50%;
+      border-radius: 15px;
+      font-size: 20px;
+      padding: 0 10px;
+      color: #000000;
+      border: none;
+  }
+  .filter-title{
+    font-size:20px;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .card-btn{
+    text-align:center;
+  }
+  .btn-primary {
+    color: #fff;
+    padding-left: 29px;
+    padding-right: revert-layer;
+    border:none;
+  }
+    </style>
+  </head>
+  
+  <body>
+  <!-- -----------------------------------------------start nav bar------------------------------------------- -->
+  <div class="body">
+    {% comment %} <div class="head"> {% endcomment %}
+      {% comment %} <div class="header content"> {% endcomment %}
+        <div class="f1 part1">
+          <form action="" method="GET">
+            <div class="filters">
+          <div class="logo">
+            <div class="logo-icon">
+              <a href="{%url 'home' %}"><img src="{%static 'login/images/icon55.png' %}" alt="" /></a>
+            </div>
+            <h3></h3>
+          </div>
+          
+          {% comment %} <ul class="pos">
+          <li class="activated">
+            <a href="{%url 'home' %}">Home</a>
+          </li>
+        </ul> {% endcomment %}
+          
+            <span class="filter-title">Filters</span>
+            {{filter.form.type_house}}
+      
+        
+          
+            <span>min price</span>{{filter.form.min_price }} 
+            <span>max price</span>{{filter.form.max_price }} 
+            {% comment %} <div class="range-input">
+              <input type="range" id="min-price" min="0" step="500" max="50000" value="0">
+              <input type="range" id="max-price" min="0" step="500" max="5000000" >
+            </div> {% endcomment %}
+            {% comment %} <br> {% endcomment %}
+            
+            <script src="{%static 'login/js/script.js' %}"></script>
+          
+          {%if d %}
+          {%else%}
+          {% comment %} <hr class="hr"> {% endcomment %}
+          <span>sell type</span>
+          {{filter.form.sell_type}}
+          {% comment %} <div class="filters">
+          
+          </div> {% endcomment %}
+          {%endif%}
+          {%if ds %}
+          {%else%}
+          {% comment %} <hr class="hr"> {% endcomment %}
+          <span class="filter-title">location</span>
+          {{filter.form.location}}
+          {% comment %} <div class="filters">
+        
+          </div> {% endcomment %}
+          {%endif%}
+          {% comment %} <hr class="hr"> {% endcomment %}
+          <!-- <span class="filter-title">other</span> -->
+          
+            <span>Number of student</span>{{filter.form.number_kitchen}} 
+            {% comment %} <span>bedroom</span>{{filter.form.number_bedroom}} <br>
+            <span>bathroom</span>{{filter.form.number_bathroom}} {% endcomment %}
+            
+            
+        </div>
+      
+        </div>
+      </form>
+      {% comment %} </div> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+    <!-- --------------------------------------------------end nav bar --------------------------------------- -->
+    
+      <div class="page-content">
+        
+        <div class="cont part2">
+        
+          {% for pro in products %}
+          <div class="card" >
+           <img class="card-img-top" src="{{pro.pics.url}}" alt="Card image cap"> 
+            <div class="card-body">
+              <h5 class="card-title">{{pro.location}}</h5>
+              <p class="card-text">
+                {{pro.Description}}
+              </p>
+            <div class="card-btn">
+              <a
+                href="{%url 'detail' pro.id pro.name%}"
+                class="btn btn-primary"
+                >Show</a
+              >
+            </div>
+            </div>
+          </div>
+          {% endfor %}
+      
+        </div>
+      
+        <script src="{%static 'login/js/auto_filter.js' %}"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    </div>
+    
+
+  </body>
+</html>

@@ -1,0 +1,216 @@
+
+   <!DOCTYPE html>
+   <html lang="en">
+    {% load static %}
+   <head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Admin page</title>
+       <link rel="stylesheet" href="{%static 'login/css/admin-page.css' %}">
+       <!--------------------------------------------- Start Google Fonts ------------------------------------------->
+       <link rel="preconnect" href="https://fonts.googleapis.com" />
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+       <link
+         href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;900&family=Josefin+Sans:wght@300&family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,400;0,600;0,800;1,200;1,300;1,400;1,500&display=swap"
+         rel="stylesheet"
+       />
+       <!--------------------------------------------------Ends Google Fonts ----------------------------------------->
+       <!-- -----------------------------------------------Start icon aosem ------------------------------------------>
+       <link rel="icon" href="{%static 'login/images/icon.png' %}" />
+       <link rel="stylesheet" href="{%static 'login/fontawesome-free-6.2.0-web/css/all.css' %}" />
+       <!-------------------------------------------------- End icon aosem----------------------------------------- -->
+   </head>
+   <body>
+        <!-- -----------------------------------------------start nav bar------------------------------------------- -->
+        <div class="body">
+          <div class="head">
+            <div class="header content">
+              <div class="logo">
+                <div class="logo-icon">
+                  <a href="{%url 'home' %}"><img src="{%static 'login/images/icon55.png' %}" alt="" /></a>
+                </div>
+                <h3></h3>
+              </div>
+              <div class="links">
+                <ul class="pos">
+                  <li class="activated">
+                    <a href="{%url 'home' %}">Home</a>
+                  </li>
+                  <li>
+                    <a href="{%url 'home' %}#ourservice">Services</a>
+                  </li>
+                  {%if user.is_superuser%}
+                    {%else%}
+                    <li>
+                      <a href="{%url 'add-product' %}">upload</a>
+                    </li>
+                    {%endif%}
+                  <li>
+                    <a href="{% url 'contact' %}">ContactUS</a>
+                  </li>
+                </ul>
+              </div>
+              {%if user.is_authenticated%}
+              <div class="sign-btns">
+                <a href="{%url 'profile-user' %}">
+                  <div class="sign-in ogbtn">
+                    profile
+                  </div>
+                </a>
+                <a href="{% url 'logout' %}" >
+                  <div class="sign-up ogbtn" >
+                    logout
+                  </div>
+                </a>
+              </div>
+              {%else%}
+              <div class="sign-btns">
+                <a href="{% url 'sign' %}">
+                  <div class="sign-in ogbtn">
+                    sign
+                  </div>
+                </a>
+              </div>
+              {%endif%}
+            </div>
+          </div>
+          <!-- --------------------------------------------------end nav bar --------------------------------------- -->
+<!-- --------------------------------------------------left-side --------------------------------------- -->
+
+
+     
+   
+   
+   
+   
+
+    
+   <div id="myDIV">
+    <div class="center">
+      <table>
+        {% for product in products %}
+        <tr>
+          <td>
+            <div class="cardss">
+              <a href="{%url 'detail' product.id product.name%}">
+                <div class="imagess-1">
+                  <img class="imagess-1" src="{{product.pics.url}}" alt="" />
+                </div>
+                <div class="one-head">
+                  {{product.location}}
+                  <span>soon</span>
+                </div>
+                <div class="two-head">
+                  <i class="fa-solid fa-street-view"></i> {{product.price}} EGP
+                  <div class="btn">For sell</div>
+                </div>
+              </a>
+              <div class="three-head">
+                <i class="fa-solid fa-bed"></i>
+                <span class="badrooms">{{product.number_kitchen}} student</span>
+                <i class="fa-solid fa-sink"></i>
+                {% comment %} <span class="badrooms">{{product.number_bedroom}} brdroom</span>
+                <i class="fa-solid fa-chart-area"></i>
+                <span class="badrooms">{{product.number_bathroom}} bathroom</span> {% endcomment %}
+              </div>
+            </div>
+          </td>
+          <td>
+            <a href="{%url 'accept_upload' product.id%}"><div class="btnn">accept</div></a>
+            <a href="{%url 'rejected_upload' product.id%}"><div class="btnn-2">Reject</div></a>
+          </td>
+        </tr>
+        {%endfor%}
+      </table>
+    </div>
+  </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   </div>
+   </body>
+   </html>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
